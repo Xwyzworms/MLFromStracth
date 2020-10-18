@@ -1,2 +1,1 @@
-# ResponsiveWebDesign
-From FreeCodeCamp 
+Ihhh Pusing matematika doang..... kenapa gw buat ? BIAR PAHAM FUNDAMENTAL BUKAN INTUISI DOANG..
