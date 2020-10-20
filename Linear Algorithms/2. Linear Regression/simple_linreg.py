@@ -39,8 +39,8 @@ def Coefficients(dataset):
 def predictions(dataset,y_test):
   predict =[]
   b0,b1 = Coefficients(dataset)
-  for y_test in y_tests:
-    y_hat = b0 + b1 * y_test
+  for x_test in y_tests:
+    y_hat = b0 + b1 * x_test
     predict.append(y_hat)
   
   return predict
@@ -51,29 +51,11 @@ x = [row[0] for row in dataset]
 y = [row[1] for row in dataset]
 
 print(f"Coefficients: b0 : {B0} , b1 : {B1})")
-y_tests = [2,3,4,5,6]
-ya = predictions(dataset,y_tests)
-ya = [ya for ya in predictions(dataset,y_tests)]
+x_tests = [2,3,4,5,6]
+x_test_true = [4,2,1,2,2]
+ya = predictions(dataset,x_tests)
 plt.scatter(x,y)
-plt.scatter(y_tests,ya)
+plt.scatter(x_tests,x_test_true)
+plt.scatter(x_tests,ya)
+plt.legend(["dataset","x_testTrue","Predicted"])
 plt.show()
-
-from google.colab import drive ; drive.mount("/content/drive")
-
-dataset = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]
-x = [row[0] for row in dataset]
-y = [row[1] for row in dataset]
-x , y
-
-np.random.seed(5)
-#x = np.random.random_sample((5,10))
-#y = np.random.random_sample((5,1))
-print( "The Mean : " , mean(x), "\n Y : ",mean(y) ) 
-print("Using NP : ",np.mean(x))
-print( "The Variance : ",variance(x,mean(x)))
-print( "Covariance : ",covariance(x,y))
-print("Using Covariance : ", np.sum(np.cov([x,y])))
-
-
-
-# Estimate Coefficients
